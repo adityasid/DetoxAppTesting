@@ -19,7 +19,9 @@
     "test:ios-both-debug": "detox test --configuration ios.sim.debug & detox test --configuration ios.sim.pro.debug & wait",
     "test:ios-both-release": "detox test --configuration ios.sim.release & detox test --configuration ios.sim.pro.release & wait",
     "test:android-debug": "detox test --configuration android.emu.debug",
-    "test:android-release": "detox test --configuration android.emu.release"
+    "test:android-release": "detox test --configuration android.emu.release",
+    "test:android-device-debug": "detox test --configuration android.att.debug",
+    "test:android-device-release": "detox test --configuration android.att.release"
   },
   "dependencies": {
     "@react-native/new-app-screen": "0.84.0",

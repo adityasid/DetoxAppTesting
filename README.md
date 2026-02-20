@@ -55,7 +55,7 @@ yarn test:ios-pro-debug
 yarn test:ios-both-debug
 ```
 
-### Android
+### Android emulator
 
 Start your emulator first, then:
 
@@ -63,6 +63,27 @@ Start your emulator first, then:
 yarn build:android-debug
 yarn test:android-debug
 ```
+
+### Android real device
+
+Connect your device via USB, enable **USB Debugging** in Developer Options, and verify it shows up:
+
+```sh
+adb devices
+```
+
+The build is the same APK as the emulator, so just reuse it:
+
+```sh
+yarn build:android-debug
+yarn test:android-device-debug
+
+# or release
+yarn build:android-release
+yarn test:android-device-release
+```
+
+> If you have multiple devices connected, Detox will pick the first one. To target a specific device, update `adbName` in `.detoxrc.js` to match the serial from `adb devices` (e.g. `adbName: 'R5CT21ABCDE'`).
 
 ---
 
